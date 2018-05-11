@@ -81,8 +81,7 @@
                         <tabViewItem identifier="general" image="PreferencesGeneral" id="Qwc-OE-zHR"/>
                         <tabViewItem identifier="advanced" image="PreferencesAdvanced" id="P9R-tX-qfW"/>
                         <tabViewItem identifier="exception" image="PreferencesException" id="s3Q-bF-sSR"/>
-                        <tabViewItem identifier="updates" image="PreferencesUpdatas" id="1sm-Qq-6GS"/>
-                        <tabViewItem identifier="about" image="PreferencesAbout" id="MrA-I8-n0Z"/>
+                        <tabViewItem identifier="updates" image="PreferencesHotkey" id="1sm-Qq-6GS"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" canDrawConcurrently="YES" misplaced="YES" type="noTabsNoBorder" id="sxC-q7-Qs6">
@@ -99,7 +98,6 @@
                         <segue destination="iW5-CD-5OC" kind="relationship" relationship="tabItems" id="GA4-xY-65w"/>
                         <segue destination="bga-wG-iim" kind="relationship" relationship="tabItems" id="kwS-lJ-OG9"/>
                         <segue destination="EWu-DP-7Gj" kind="relationship" relationship="tabItems" id="gsT-c8-cJ3"/>
-                        <segue destination="RfV-Ow-3mF" kind="relationship" relationship="tabItems" id="djr-7D-XVN"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Huf-MT-zgs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -363,7 +361,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="8dl-2h-i32">
-                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="LP2-dF-uOZ">
@@ -530,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="1460" y="1667"/>
         </scene>
-        <!--Updates-->
+        <!--Mouse-->
         <scene sceneID="VTW-lQ-Mfk">
             <objects>
-                <viewController title="Updates" storyboardIdentifier="updates" id="EWu-DP-7Gj" customClass="PreferencesUpdatesViewController" customModule="Mos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Mouse" storyboardIdentifier="updates" id="EWu-DP-7Gj" customClass="PreferencesUpdatesViewController" customModule="Mos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="mGP-BF-mdE">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="82"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -542,40 +540,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </visualEffectView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0P-u6-9Am">
-                                <rect key="frame" x="29" y="45" width="120" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Check for updates:" id="N0S-yo-DTg">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LEb-dV-4AM">
-                                <rect key="frame" x="179" y="44" width="110" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="roundRect" title="Check Now" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lp3-Dc-zRt">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="cellTitle"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="checkButtonClick:" target="EWu-DP-7Gj" id="i2G-yK-k2b"/>
-                                </connections>
-                            </button>
-                            <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeP-Gc-BVl">
-                                <rect key="frame" x="179" y="20" width="212" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Current Version" id="5oM-oR-Dsq">
-                                    <font key="font" metaFont="systemLight" size="12"/>
-                                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="versionLabel" destination="XeP-Gc-BVl" id="A9p-bo-YOp"/>
-                    </connections>
                 </viewController>
                 <customObject id="Tfe-PH-zhM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1444,13 +1410,12 @@ Gw
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="PaypalLogo" width="238" height="58"/>
-        <image name="PreferencesAbout" width="500" height="500"/>
         <image name="PreferencesAdvanced" width="500" height="500"/>
         <image name="PreferencesException" width="500" height="500"/>
         <image name="PreferencesGeneral" width="500" height="500"/>
+        <image name="PreferencesHotkey" width="200" height="200"/>
         <image name="PreferencesListEmpty" width="896" height="896"/>
         <image name="PreferencesNeedAccessibility" width="863" height="896"/>
-        <image name="PreferencesUpdatas" width="500" height="500"/>
         <image name="Refresh" width="200" height="191"/>
         <image name="WechatpayLogo" width="309" height="80"/>
         <image name="WechatpayQR" width="473" height="473"/>

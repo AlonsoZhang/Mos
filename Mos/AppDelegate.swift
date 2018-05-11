@@ -11,6 +11,9 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     
+    var mouseEventTap:CFMachPort?
+    let mouseEventMask = CGEventMask(1 << CGEventType.otherMouseDown.rawValue)
+    
     // 运行前预处理
     func applicationWillFinishLaunching(_ notification: Notification) {
         // 设置通知中心代理
@@ -28,6 +31,29 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     // 运行后启动处理
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         ScrollCore.shared.startHandlingScroll()
+        mouseEventTap = Interception.start(event: mouseEventMask, to: mouseEventCallback, at: .cghidEventTap, where: .headInsertEventTap, for: .defaultTap)
+    }
+    
+    let mouseEventCallback: CGEventTapCallBack = { (proxy, type, event, refcon) in
+        let flag = event.getIntegerValueField(.mouseEventButtonNumber)
+        if flag == 4 {
+            var event = CGEvent(keyboardEventSource: nil, virtualKey: 43, keyDown: true)
+            event?.flags = CGEventFlags.maskControl
+            event?.post(tap: .cgSessionEventTap)
+            event = CGEvent(keyboardEventSource: nil, virtualKey: 43, keyDown: false)
+            event?.flags = CGEventFlags.maskControl
+            event?.post(tap: .cgSessionEventTap)
+        }else if flag == 3{
+            var event = CGEvent(keyboardEventSource: nil, virtualKey: 47, keyDown: true)
+            event?.flags = CGEventFlags.maskControl
+            event?.post(tap: .cgSessionEventTap)
+            event = CGEvent(keyboardEventSource: nil, virtualKey: 47, keyDown: false)
+            event?.flags = CGEventFlags.maskControl
+            event?.post(tap: .cgSessionEventTap)
+        }else if flag == 2{
+            
+        }
+        return nil
     }
     // 关闭前停止处理
     func applicationWillTerminate(_ aNotification: Notification) {
