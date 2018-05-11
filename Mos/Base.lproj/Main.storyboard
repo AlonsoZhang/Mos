@@ -82,6 +82,7 @@
                         <tabViewItem identifier="advanced" image="PreferencesAdvanced" id="P9R-tX-qfW"/>
                         <tabViewItem identifier="exception" image="PreferencesException" id="s3Q-bF-sSR"/>
                         <tabViewItem identifier="updates" image="PreferencesHotkey" id="1sm-Qq-6GS"/>
+                        <tabViewItem identifier="about" image="PreferencesAbout" id="4t8-IL-qlY"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" canDrawConcurrently="YES" misplaced="YES" type="noTabsNoBorder" id="sxC-q7-Qs6">
@@ -98,6 +99,7 @@
                         <segue destination="iW5-CD-5OC" kind="relationship" relationship="tabItems" id="GA4-xY-65w"/>
                         <segue destination="bga-wG-iim" kind="relationship" relationship="tabItems" id="kwS-lJ-OG9"/>
                         <segue destination="EWu-DP-7Gj" kind="relationship" relationship="tabItems" id="gsT-c8-cJ3"/>
+                        <segue destination="RfV-Ow-3mF" kind="relationship" relationship="tabItems" id="u5E-67-nPQ"/>
                     </connections>
                 </tabViewController>
                 <customObject id="Huf-MT-zgs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -539,6 +541,26 @@
                             <visualEffectView fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="VHb-La-sVZ">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4y-IL-ydQ">
+                                        <rect key="frame" x="238" y="32" width="4" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="UUw-74-k77">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wej-fl-bKS">
+                                        <rect key="frame" x="100" y="32" width="260" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="鼠标侧键对应快捷键：Control+,/Control+." id="Wrd-Tv-w1G">
+                                            <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
                             </visualEffectView>
                         </subviews>
                     </view>
@@ -1410,6 +1432,7 @@ Gw
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSRemoveTemplate" width="11" height="11"/>
         <image name="PaypalLogo" width="238" height="58"/>
+        <image name="PreferencesAbout" width="500" height="500"/>
         <image name="PreferencesAdvanced" width="500" height="500"/>
         <image name="PreferencesException" width="500" height="500"/>
         <image name="PreferencesGeneral" width="500" height="500"/>
