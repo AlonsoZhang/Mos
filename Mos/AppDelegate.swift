@@ -39,7 +39,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         if flag == 4 {
             
             //NSDictionary *error = [NSDictionary new];
-            let script = NSAppleScript.init(source: "tell application \"System Events\" to key code 123 using command down")
+            let script = NSAppleScript.init(source: "tell application \"System Events\"\n key code 123 using {control down} \n end tell")
             script?.executeAndReturnError(nil)
 //            var event = CGEvent(keyboardEventSource: nil, virtualKey: 43, keyDown: true)
 //            event?.flags = CGEventFlags.maskControl
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
 //            event?.flags = CGEventFlags.maskControl
 //            event?.post(tap: .cgSessionEventTap)
         }else if flag == 3{
-            let script = NSAppleScript.init(source: "tell application \"System Events\" to key code 124 using command down")
+            let script = NSAppleScript.init(source: "tell application \"System Events\"\n key code 124 using {control down} \n end tell")
             script?.executeAndReturnError(nil)
 //            var event = CGEvent(keyboardEventSource: nil, virtualKey: 47, keyDown: true)
 //            event?.flags = CGEventFlags.maskControl
